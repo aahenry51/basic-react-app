@@ -1,23 +1,32 @@
 import React, { useState, useEffect } from "react";
 
-const handleSubmit = async (event) => {
-  event.preventDefault();
-};
+export const LoginPage = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-export const login = () => {
+  const handleSubmit = async (event: any) => {
+    event.preventDefault();
+  };
+
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Username:
-          <input type="text" value={} onChange={() => {}} />
-        </label>
-        <label>
-          Password:
-          <input type="" value={} onChange={() => {}} />
-        </label>
-        <button />
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <label>
+        Username:
+        <input
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+      </label>
+      <label>
+        Password:
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </label>
+      <input type="submit" value="Submit" />
+    </form>
   );
 };
